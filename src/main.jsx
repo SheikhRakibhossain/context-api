@@ -8,6 +8,9 @@ import OrderReview from './components/OrderReview/OrderReview';
 import Contact from './components/Contact/Contact';
 import About from './components/About/About';
 import Error from './components/Error/Error';
+import {ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const router = createBrowserRouter([
   {
@@ -19,7 +22,7 @@ const router = createBrowserRouter([
         element:<Home></Home>,
         loader: ()=> fetch('tshirts.json')
       },
-      
+
       { path:'/review',
         element:<OrderReview></OrderReview>
 
@@ -44,5 +47,6 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RouterProvider router={router} />
+    <ToastContainer />
   </React.StrictMode>,
 )
